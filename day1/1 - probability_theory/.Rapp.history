@@ -1,0 +1,1226 @@
+A_inter <- intersection(A1, A2)#
+A_inter
+A_inter <- inter(A1, A2)#
+A_inter
+?union
+A_inter <- intersect(A1, A2)#
+A_inter
+B1_min <- -2#
+B1_max <- 1#
+#
+B2_min <- 0#
+B2_max <- 3
+B_union_min <- -2#
+B_union_max <- 3#
+#
+# What are the lower and upper bounds of the intersection of B1 and B2?#
+B_inter_min <- 0#
+B_inter_max <- 1
+l = 5#
+dpois(2, l)
+ppois(2, l)
+p <- hist(0, breaks=0:21-0.5, plot=FALSE)#
+p$counts <- dpois(0:20, 5)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=dark, border=c_dark_highlight,#
+     xlab="x", xlim=c(-0.5, 20.5), #
+     ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="x", xlim=c(-0.5, 20.5), #
+     ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="x", xlim=c(-0.5, 20.5), #
+     ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+sapply(A1, function(x) dpois(x, l))
+sum(sapply(A1, function(x) dpois(x, l)))
+A[len(A)]
+A1[len(A1)]
+A1[length(A1)]
+poisson_prob <- function(A, l) {#
+  return ppois(A[length(A)], l) - ppois(A[0] - 1, l)#
+}#
+#
+poisson_prob(A1, l)
+poisson_prob <- function(A, l) {#
+  ppois(A[length(A)], l) - ppois(A[0] - 1, l)#
+}#
+#
+poisson_prob(A1, l)
+poisson_prob <- function(A, l) {#
+  (ppois(A[length(A)], l) - ppois(A[0] - 1, l))#
+}#
+#
+poisson_prob(A1, l)
+P <- poisson_prob(A1, l)#
+P
+P
+poisson_prob <- function(A, l) {#
+  return(ppois(A[length(A)], l) - ppois(A[0] - 1, l))#
+}#
+#
+poisson_prob(A1, l)
+A <- A1
+ppois(A[length(A)], l) - ppois(A[0] - 1, l)
+ppois(A[0] - 1, l)
+ppois(5, l)
+A[0]
+A[[0]]
+A
+A[1]
+poisson_prob <- function(A, l) {#
+  return(ppois(A[length(A)], l) - ppois(A[1] - 1, l))#
+}#
+#
+poisson_prob(A1, l)
+(1 - ppois(A[length(A)], l)) +  ppois(A[1] - 1, l)#
+#
+# or by using the sum rule for complements, P[A^c] = 1 - P[A],#
+1 - poisson_prob(A1, l)
+poisson_prob(A_union, l)#
+#
+# or by using the general sum rule,#
+# P[A \cup B] = P[A] + P[B] - P[A \cap B]#
+poisson_prob(A1, l) + poisson_prob(A2, l) - poisson_prob(A_inter, l)#
+#
+# What is the probability of the intersection of A1 and A2?#
+#
+# We can compute this using cumulative distribution functions#
+poisson_prob(A_inter, l)#
+#
+# or by using the general sum rule,#
+# P[A \cap B] = P[A] + P[B] - P[A \cup B]#
+poisson_prob(A1, l) + poisson_prob(A2, l) - poisson_prob(A_union, l)
+5
+numeric(5)
+float(5)
+real(5)
+as.numeric(5)
+as.double(5)
+iota <- function(x) {#
+  return(as.double(x))#
+}#
+# R will do this casting implicitly, but it's important#
+# to recognize what's going on in the calculation!#
+#
+# The mean is then estimated by#
+sum(sapply(0:100), function(x) iota(x) * dpois(x, l)))
+sum(sapply(0:100), function(x) iota(x) * dpois(x, l))
+sum(sapply(0:100, function(x) iota(x) * dpois(x, l)))
+partial means = sapply(1:100, function(n) #
+                       sum(sapply(0:n, function(x) iota(x) * dpois(x, l))))
+partial_means <- sapply(1:100, function(x) #
+                        sum(sapply(0:x, function(y) iota(y) * dpois(y, l))))
+partial_means
+par(mar = c(8, 6, 0, 0.5))#
+plot(xs, partial_means, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Partial Mean",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+xs <- 1:100
+par(mar = c(8, 6, 0, 0.5))#
+plot(xs, partial_means, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Partial Mean",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+plot(xs, partial_means, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Partial Mean",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+sum(sapply(0:100, function(x) (iota(x) - 5)**2 * dpois(x, l)))
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, l)))#
+emp_mean
+emp_mean <- sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, l)))#
+#
+# What is the variance of the pushforward distribution#
+# for various choices of the intensity?#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 1)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 1)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 2.5)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 2.5)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 5)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 5)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 10)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 10)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 25)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 25)))#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 50)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 50)))
+emp_mean <- sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, l)))
+emp_mean
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, l)))
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, l)))#
+emp_mean#
+#
+# What is the variance of the pushforward distribution?#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, l)))#
+#
+# What is the variance of the pushforward distribution#
+# for various choices of the intensity?#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 1)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 1)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 2.5)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 2.5)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 5)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 5)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 10)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 10)))#
+#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 25)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 25)))#
+emp_mean <- sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, 50)))#
+sum(sapply(0:100, function(x) (sqrt(iota(x)) - emp_mean)**2 * dpois(x, 50)))
+sapply(1:21, function(x) sqrt(x - 0.5))
+c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))
+length(bin_edges)
+head(bin_edges, 21)
+length(head(bin_edges, 21))
+bin_widths  = sapply(1:20, function(x) bin_edges[x + 1] - bin_edges[x])
+bin_widths
+?barplot
+bar_plot(height=pmfs, width=bin_widths, space=0)
+barplot(height=pmfs, width=bin_widths, space=0)
+xs <- 0:20#
+pmfs <- dpois(xs, l)#
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+bin_lefts <- head(bin_edges, 21)#
+bin_widths  = sapply(1:20, function(x) bin_edges[x + 1] - bin_edges[x])#
+#
+barplot(height=pmfs, width=bin_widths, space=0)
+idx <- rep(0:20, each=2)#
+x <- sapply(1:length(idx), function(m) if(m %% 2 == 0) idx[m] + 0.5 else idx[m] - 0.5)
+x
+idx <- rep(0:20, each=2)
+rep(0:20, each=2)
+rep(0:20, each=2)
+x
+x <- rep(0:20, each=2)#
+x <- sapply(1:length(x), function(m) if(m %% 2 == 0) x[m] + 0.5 else x[m] - 0.5)
+x
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))
+bin_edges
+rep(bin_edges, each=2)
+length(rep(bin_edges, each=2))
+rep(bin_edges, each=2)[2:43]
+pmfs <- dpois(0:20, l)#
+pad_pmfs <- rep(pmfs, each=2) #
+#
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+pad_xs <- rep(bin_edges, each=2)[2:43]#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(pad_xs, pad_pmfs, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="x", xlim=c(-0.5, 20.5), #
+     ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+warnings()
+par(mar = c(8, 6, 0, 0.5))#
+lines(pad_xs, pad_pmfs, main="", col=c_dark, border=c_dark_highlight,#
+      xlab="x", xlim=c(-0.5, 20.5), #
+      ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+      cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+par(mar = c(8, 6, 0, 0.5))#
+plot(pad_xs, pad_pmfs, type="l", main="", col=c_dark, border=c_dark_highlight,#
+      xlab="x", xlim=c(-0.5, 20.5), #
+      ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+      cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+bin_edges
+par(mar = c(8, 6, 0, 0.5))#
+plot(pad_xs, pad_pmfs, type="l", main="", col=c_dark, #
+      xlab="x", xlim=c(-0.5, 5), #
+      ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+      cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+?hist
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$counts <- dpois(0:20, l)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col="white", border=c_dark_highlight,#
+     xlab="x", yaxt='n', ylim=c(0, 0.2), ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+p <- hist(0, breaks=bin_edges, plot=FALSE)
+length(p$counts)
+length(0:20)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$counts <- dpois(0:20, l)
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col="white", border=c_dark_highlight,#
+     xlab="x", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+l
+dpois(0:20, l)
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+bin_edges
+p$breaks
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+p$counts
+# the pushforward distribution of y = sqrt(x)?#
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$counts <- 100 * dpois(0:20, l)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+length(p$counts)
+length(p$breaks)
+plot(p$breaks[1:21], p$counts)
+plot(p$breaks[1:21], p$counts)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$counts <- dpois(0:20, l)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+plot(p$breaks[1:21], p$counts)
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+p
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+plot_poisson <- function(l) {#
+  p <- hist(0, breaks=0:21-0.5, plot=FALSE)#
+  p$counts <- dpois(0:20, l)#
+#
+  par(mar = c(8, 6, 0, 0.5))#
+  plot(p, main="", col=c_dark, border=c_dark_highlight,#
+       xlab="x", xlim=c(-0.5, 20.5), #
+       ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+       cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+}#
+#
+plot_poisson(l)
+plot_probs <- function(A, l) {#
+  bin_edges <- c(A, A[length(A)] + 1) - 0.5#
+  p_sum <- hist(0, breaks=bin_edges, plot=FALSE)#
+  p_sum$counts <- dpois(A, 5)#
+#
+  plot(p_sum, col=c_dark, border=c_dark_highlight, add=T)#
+}#
+#
+plot_poisson(l)#
+plot_probs(A1, l)
+A
+bin_edges <- c(A, A[length(A)] + 1) - 0.5
+bin_edges
+p_sum <- hist(0, breaks=bin_edges, plot=FALSE)
+plot_probs <- function(A, l) {#
+  bin_edges <- c(A, A[length(A)] + 1) - 0.5#
+  p_sum <- hist(A[1], breaks=bin_edges, plot=FALSE)#
+  p_sum$counts <- dpois(A, 5)#
+#
+  plot(p_sum, col=c_dark, border=c_dark_highlight, add=T)#
+}#
+#
+plot_poisson(l)#
+plot_probs(A1, l)
+plot_poisson <- function(l) {#
+  p <- hist(0, breaks=0:21-0.5, plot=FALSE)#
+  p$counts <- dpois(0:20, l)#
+#
+  par(mar = c(8, 6, 0, 0.5))#
+  plot(p, main="", col=white, border=c_dark_highlight,#
+       xlab="x", xlim=c(-0.5, 20.5), #
+       ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+       cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+}#
+#
+plot_poisson(l)#
+#
+# What is the probabilty of A1 by explicit summation?#
+sum(sapply(A1, function(x) dpois(x, l)))#
+#
+# We can plot that, too#
+plot_probs <- function(A, l) {#
+  bin_edges <- c(A, A[length(A)] + 1) - 0.5#
+  p_sum <- hist(A[1], breaks=bin_edges, plot=FALSE)#
+  p_sum$counts <- dpois(A, 5)#
+#
+  plot(p_sum, col=c_dark, border=c_dark_highlight, add=T)#
+}#
+#
+plot_poisson(l)#
+plot_probs(A1, l)
+plot_poisson <- function(l) {#
+  p <- hist(0, breaks=0:21-0.5, plot=FALSE)#
+  p$counts <- dpois(0:20, l)#
+#
+  par(mar = c(8, 6, 0, 0.5))#
+  plot(p, main="", col="white", border=c_dark_highlight,#
+       xlab="x", xlim=c(-0.5, 20.5), #
+       ylab="Probability Mass", ylim=c(0, 0.2), yaxt='n',#
+       cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+}#
+#
+plot_poisson(l)#
+#
+# What is the probabilty of A1 by explicit summation?#
+sum(sapply(A1, function(x) dpois(x, l)))#
+#
+# We can plot that, too#
+plot_probs <- function(A, l) {#
+  bin_edges <- c(A, A[length(A)] + 1) - 0.5#
+  p_sum <- hist(A[1], breaks=bin_edges, plot=FALSE)#
+  p_sum$counts <- dpois(A, 5)#
+#
+  plot(p_sum, col=c_dark, border=c_dark_highlight, add=T)#
+}#
+#
+plot_poisson(l)#
+plot_probs(A1, l)
+plot_poisson(l)#
+plot_probs(0:(A[1] - 1), l)#
+plot_probs((A[length(A)] + 1):20, l)
+plot_poisson(l)#
+plot_probs(0:(A_union, l)
+plot_poisson(l)#
+plot_probs(A_union, l)
+plot_poisson(l)#
+plot_probs(A_inter, l)
+mu <- 1#
+sigma <- 1.25#
+dnorm(2, mu, sigma);#
+#
+# The cumulative distribution function is similary defined as#
+pnorm(2, mu, sigma);#
+#
+# Let's plot the probability density function as a function of x#
+x <- seq(-8, 8, 0.001)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(x, dnorm(x, mu, sigma), type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+plot_norm <- function(mu, sigma) {#
+  x <- seq(-8, 8, 0.001)#
+#
+  par(mar = c(8, 6, 0, 0.5))#
+  plot(x, dnorm(x, mu, sigma), type="l", col=c_dark_highlight, lwd=2,#
+       xlab="x", ylab="Probability Density",#
+       cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')#
+}#
+#
+plot_norm(mu, sigma)
+plot_norm <- function(mu, sigma) {#
+  x <- seq(-8, 8, 0.001)#
+#
+  plot(x, dnorm(x, mu, sigma), type="l", col=c_dark_highlight, lwd=2,#
+       xlab="x", ylab="Probability Density",#
+       cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')#
+}#
+#
+plot_norm(mu, sigma)
+plot_norm_probs <- function(mu, sigma, B_min, B_max) {#
+  x_int <- seq(B_min, B_max, 0.001)#
+  x <- c(x_int, 1, -2)#
+  y <- c(dnorm(x_int, 0, 1), 0, 0)#
+#
+  polygon(x, y, col=c_dark, border=NA)#
+}#
+#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B1_min, B1_max)
+plot_norm_probs <- function(mu, sigma, B_min, B_max) {#
+  x_int <- seq(B_min, B_max, 0.001)#
+  x <- c(x_int, 1, -2)#
+  y <- c(dnorm(x_int, mu, sigma), 0, 0)#
+#
+  polygon(x, y, col=c_dark, border=NA)#
+}#
+#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B1_min, B1_max)
+(1 - stats.norm.cdf(B1_max, mu, sigma)) + stats.norm.cdf(B1_min, mu, sigma)#
+#
+# or by using the sum rule for complements, P[A^c] = 1 - P[A],#
+1 - norm_prob(B1_min, B1_max, mu, sigma)#
+#
+# In pictures,#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, -8, B1_min)#
+plot_norm_probs(mu, sigma, B1_max, 8)
+def norm_prob(B_min, B_max, mu, sigma):#
+    return stats.norm.cdf(B_max, mu, sigma) - stats.norm.cdf(B_min, mu, sigma)#
+#
+norm_prob(B1_min, B1_max, mu, sigma)
+norm_prob <- function(B_min, B_max, mu, sigma) {#
+    return pnorm(B_max, mu, sigma) - pnorm(B_min, mu, sigma)#
+}#
+#
+norm_prob(B1_min, B1_max, mu, sigma)
+norm_prob <- function(B_min, B_max, mu, sigma) {#
+    return(pnorm(B_max, mu, sigma) - pnorm(B_min, mu, sigma))#
+}
+norm_prob(B1_min, B1_max, mu, sigma)
+plot_norm_probs <- function(mu, sigma, B_min, B_max) {#
+  x_int <- seq(B_min, B_max, 0.001)#
+  x <- c(x_int, 1, -2)#
+  y <- c(dnorm(x_int, mu, sigma), 0, 0)#
+#
+  polygon(x, y, col=c_dark, border=NA)#
+}#
+#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B1_min, B1_max)
+(1 - stats.norm.cdf(B1_max, mu, sigma)) + stats.norm.cdf(B1_min, mu, sigma)#
+#
+# or by using the sum rule for complements, P[A^c] = 1 - P[A],#
+1 - norm_prob(B1_min, B1_max, mu, sigma)#
+#
+# In pictures,#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, -8, B1_min)#
+plot_norm_probs(mu, sigma, B1_max, 8)
+(1 - pnorm(B1_max, mu, sigma)) + pnorm(B1_min, mu, sigma)#
+#
+# or by using the sum rule for complements, P[A^c] = 1 - P[A],#
+1 - norm_prob(B1_min, B1_max, mu, sigma)
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, -8, B1_min)#
+plot_norm_probs(mu, sigma, B1_max, 8)
+plot_norm_probs <- function(mu, sigma, B_min, B_max) {#
+  x_int <- seq(B_min, B_max, 0.001)#
+  x <- c(x_int, B_max, B_min)#
+  y <- c(dnorm(x_int, mu, sigma), 0, 0)#
+#
+  polygon(x, y, col=c_dark, border=NA)#
+}#
+#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B1_min, B1_max)
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, -8, B1_min)#
+plot_norm_probs(mu, sigma, B1_max, 8)
+norm_prob(B_union_min, B_union_max, mu, sigma)#
+#
+# or by using the general sum rule,#
+# P[A \cup B] = P[A] + P[B] - P[A \cap B]#
+norm_prob(B1_min, B1_max, mu, sigma) \#
++ norm_prob(B2_min, B2_max, mu, sigma) \#
+- norm_prob(B_inter_min, B_inter_max, mu, sigma)#
+#
+# In pictures#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B_union_min, B_union_max)
+norm_prob(B1_min, B1_max, mu, sigma)#
++ norm_prob(B2_min, B2_max, mu, sigma)#
+- norm_prob(B_inter_min, B_inter_max, mu, sigma)
+norm_prob(B_union_min, B_union_max, mu, sigma)#
+#
+# or by using the general sum rule,#
+# P[A \cup B] = P[A] + P[B] - P[A \cap B]#
+norm_prob(B1_min, B1_max, mu, sigma) + #
+norm_prob(B2_min, B2_max, mu, sigma) - #
+norm_prob(B_inter_min, B_inter_max, mu, sigma)
+norm_prob(B_inter_min, B_inter_max, mu, sigma)#
+#
+# or by using the general sum rule,#
+# P[A \cap B] = P[A] + P[B] - P[A \cup B]#
+norm_prob(B1_min, B1_max, mu, sigma) + #
+norm_prob(B2_min, B2_max, mu, sigma) - #
+norm_prob(B_union_min, B_union_max, mu, sigma)#
+#
+# In pictures#
+plot_norm(mu, sigma)#
+plot_norm_probs(mu, sigma, B_inter_min, B_inter_max)
+y_inv <- function(y) {#
+  return(sqrt(y))#
+}#
+#
+# First we have to compute the Jacobian, dx / dy (y)#
+abs_J <- function(y) {#
+  return(1 / (2 * sqrt(y)))#
+}#
+#
+# Then we can plot the pushforward density as#
+N = 500#
+ys = [ 16.0 * (n + 1) / N for n in range(N)]#
+pdfs = [ stats.norm.pdf(y_inv(y), mu, sigma) * abs_J(y) for y in ys]#
+#
+ys <- seq(0, 16, 0.001)#
+pfds <- sapply(ys, function(y) dnorm(y_inv(y), mu, sigma) * abs_J(y))#
+#
+plot(x, pdfs, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+y_inv <- function(y) {#
+  return(sqrt(y))#
+}#
+#
+# First we have to compute the Jacobian, dx / dy (y)#
+abs_J <- function(y) {#
+  return(1 / (2 * sqrt(y)))#
+}#
+#
+# Then we can plot the pushforward density as#
+ys <- seq(0, 16, 0.001)#
+pfds <- sapply(ys, function(y) dnorm(y_inv(y), mu, sigma) * abs_J(y))#
+#
+plot(x, pdfs, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+ys <- seq(0, 16, 0.001)#
+pdfs <- sapply(ys, function(y) dnorm(y_inv(y), mu, sigma) * abs_J(y))#
+#
+plot(x, pdfs, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="x", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')
+?rpois
+c_light_trans <- c("#DCBCBC80")#
+c_light_highlight_trans <- c("#C7999980")#
+c_mid_trans <- c("#B97C7C80")#
+c_mid_highlight_trans <- c("#A2505080")#
+c_dark_trans <- c("#8F272780")#
+c_dark_highlight_trans <- c("#7C000080")
+set.seed(8675309)#
+#
+r_samples <- rpois(1000, l)#
+#
+# Or we can generate exact samples using Stan's pseudo random number generator#
+writeLines(readLines("generate_poisson.stan"))#
+#
+simu_data <- list("l" = l)#
+#
+fit <- stan(file='generate_poisson.stan', data=simu_data, #
+            seed=194838, algorithm="Fixed_param",#
+            iter=1000, warmup=0, chains=1)#
+#
+stan_samples <- extract(fit)$x[]
+setwd('/Users/Betancourt/Documents/Research/Courses/2018.09.10 Potsdam Summer School/exercises/day1/1 - probability_theory')
+writeLines(readLines("generate_poisson.stan"))#
+#
+simu_data <- list("l" = l)#
+#
+fit <- stan(file='generate_poisson.stan', data=simu_data, #
+            seed=194838, algorithm="Fixed_param",#
+            iter=1000, warmup=0, chains=1)#
+#
+stan_samples <- extract(fit)$x[]
+plot_poisson(l)#
+hist(r_samples, breaks=0:21-0.5, #
+     col=c_dark_trans, border=c_dark_highlight_trans, add=T)#
+hist(stan_samples, breaks=0:21-0.5, #
+     col=c_mid_trans, border=c_mid_highlight_trans, add=T)
+?hist
+plot_poisson(l)#
+hist(r_samples, breaks=0:21-0.5, #
+     col=c_dark_trans, border=c_dark_highlight_trans, probability=T, add=T)#
+hist(stan_samples, breaks=0:21-0.5, #
+     col=c_mid_trans, border=c_mid_highlight_trans, probability=T, add=T)
+?welford
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for n in 1:length(x) {#
+    delta <- x[n] - summary[0]#
+    summary[0] += delta / (n + 1)#
+    summary[1] += delta * (x[n] - summary[0])#
+  }#
+  summary[1] /= (length(x) - 1)#
+  return(summary)#
+}#
+#
+# We can then use the Welford accumulator to compute the Monte Carlo#
+# estimator of a function and an estiamte of its Monte Carlo Standard Error#
+compute_mc_stats <- function(x) {#
+  summary <- welford_summary(x)#
+  return(c(summary[0], sqrt(summary[1] / length(x)))#
+}#
+#
+# In order to estimate probabilities we estiamte the expecation value of#
+# an indicator function#
+indicator <- function(x, A) {#
+  return((A[0] <= x) & (x <= A[-1]) ? 1 : 0)#
+}#
+#
+# Finally we can estimate the probability of A1 as#
+pushforward_samples = sapply(stan_samples, indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for (n in 1:length(x)) {#
+    delta <- x[n] - summary[0]#
+    summary[0] += delta / (n + 1)#
+    summary[1] += delta * (x[n] - summary[0])#
+  }#
+  summary[1] /= (length(x) - 1)#
+  return(summary)#
+}
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for (n in 1:length(x)) {#
+    delta <- x[n] - summary[0]#
+    summary[0] += delta / (n + 1)#
+    summary[1] += delta * (x[n] - summary[0])#
+  }#
+  summary[1] /= (length(x) - 1)#
+  return(summary)#
+}
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for (n in 1:length(x)) {#
+    delta <- x[n] - summary[0]#
+    summary[0] <- summary[0] + delta / (n + 1)#
+    summary[1] <- summary[1] + delta * (x[n] - summary[0])#
+  }#
+  summary[1] /= (length(x) - 1)#
+  return(summary)#
+}
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for (n in 1:length(x)) {#
+    delta <- x[n] - summary[0]#
+    summary[0] <- summary[0] + delta / (n + 1)#
+    summary[1] <- summary[1] + delta * (x[n] - summary[0])#
+  }#
+  summary[1] <- summary[1] / (length(x) - 1)#
+  return(summary)#
+}
+compute_mc_stats <- function(x) {#
+  summary <- welford_summary(x)#
+  return(c(summary[0], sqrt(summary[1] / length(x)))#
+}
+compute_mc_stats <- function(x) {#
+  summary <- welford_summary(x)#
+  return(c(summary[0], sqrt(summary[1] / length(x))))#
+}
+indicator <- function(x, A) {#
+  return((A[0] <= x) & (x <= A[-1]) ? 1 : 0)#
+}
+pushforward_samples = sapply(stan_samples, indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+indicator <- function(x, A) {#
+  return((A[0] <= x) & (x <= A[length(A)]) ? 1 : 0)#
+}#
+#
+# Finally we can estimate the probability of A1 as#
+pushforward_samples = sapply(stan_samples, indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+# Finally we can estimate the probability of A1 as#
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+indicator(0, A1)
+?indicator
+indicator <- function(x, A) {#
+  return((A[0] <= x) && (x <= A[length(A)]) ? 1 : 0)#
+}
+indicator(0, A1)
+indicator <- function(x, A) {#
+  return(ifelse(A[0] <= x && x <= A[length(A)], 1, 0)#
+}
+indicator <- function(x, A) {#
+  return(ifelse(A[0] <= x && x <= A[length(A)], 1, 0))#
+}
+indicator(0, A1)
+A1[0]
+A1
+indicator <- function(x, A) {#
+  return(ifelse(A[1] <= x && x <= A[length(A)], 1, 0))#
+}
+indicator(0, A1)
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+welford_summary <- function(x) {#
+  summary = c(0, 0)#
+  for (n in 1:length(x)) {#
+    delta <- x[n] - summary[1]#
+    summary[1] <- summary[1] + delta / (n + 1)#
+    summary[2] <- summary[2] + delta * (x[n] - summary[1])#
+  }#
+  summary[2] <- summary[2] / (length(x) - 1)#
+  return(summary)#
+}#
+#
+# We can then use the Welford accumulator to compute the Monte Carlo#
+# estimator of a function and an estiamte of its Monte Carlo Standard Error#
+compute_mc_stats <- function(x) {#
+  summary <- welford_summary(x)#
+  return(c(summary[0], sqrt(summary[1] / length(x))))#
+}#
+#
+# In order to estimate probabilities we estiamte the expecation value of#
+# an indicator function#
+indicator <- function(x, A) {#
+  return(ifelse(A[1] <= x && x <= A[length(A)], 1, 0))#
+}#
+#
+# Finally we can estimate the probability of A1 as#
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A1))#
+compute_mc_stats(pushforward_samples)
+poisson_prob(A1, l)
+indicator <- function(x, A) {#
+  return(ifelse(A[1] <= x & x <= A[length(A)], 1, 0))#
+}#
+#
+# Finally we can estimate the probability of A1 as#
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A1))#
+compute_mc_stats(pushforward_samples)#
+#
+# Which is consisent with the exact value,#
+poisson_prob(A1, l)
+compute_mc_stats(rnorm(1000))
+a <- compute_mc_stats(rnorm(1000))
+compute_mc_stats <- function(x) {#
+  summary <- welford_summary(x)#
+  return(c(summary[1], sqrt(summary[2] / length(x))))#
+}
+compute_mc_stats(rnorm(1000))
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A1))#
+compute_mc_stats(pushforward_samples)#
+#
+# Which is consisent with the exact value,#
+poisson_prob(A1, l)
+iter <- 2:1000#
+mc_stats <- sapply(iter, function(n) compute_mc_stats(pushforward_samples[0:n]))
+mc_stats[1,]
+mc_stats[1,] - 3 * mc_stats[2,]
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main=title, xlab="Iteration", ylab="Monte Carlo Estimator")#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+?lines
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", xlab="Iteration", ylab="Monte Carlo Estimator")#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", #
+       xlab="Iteration", #
+       xlim=c(min(mc_stats[1,] - 3 * mc_stats[2,]), max(mc_stats[1,] + 3 * mc_stats[2,]))#
+       ylab="Monte Carlo Estimator", ylim=c(min(iter), max(iter)))#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", #
+       xlab="Iteration", #
+       xlim=c(min(mc_stats[1,] - 3 * mc_stats[2,]), max(mc_stats[1,] + 3 * mc_stats[2,])),#
+       ylab="Monte Carlo Estimator", ylim=c(min(iter), max(iter)))#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+iter
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", #
+       xlab="Iteration", xlim=c(min(iter), max(iter)),#
+       ylab="Monte Carlo Estimator",#
+       xlim=c(min(mc_stats[1,] - 3 * mc_stats[2,]), max(mc_stats[1,] + 3 * mc_stats[2,])))#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", #
+       xlab="Iteration", xlim=c(min(iter), max(iter)),#
+       ylab="Monte Carlo Estimator",#
+       ylim=c(min(mc_stats[1,] - 3 * mc_stats[2,]), max(mc_stats[1,] + 3 * mc_stats[2,])))#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+plot_mc_evo <- function(iter, mc_stats, truth) {#
+  plot(1, type="n", main="", #
+       xlab="Iteration", xlim=c(0, max(iter)),#
+       ylab="Monte Carlo Estimator",#
+       ylim=c(min(mc_stats[1,] - 3 * mc_stats[2,]), max(mc_stats[1,] + 3 * mc_stats[2,])))#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 3 * mc_stats[2,], #
+            rev(mc_stats[1,] + 3 * mc_stats[2,])),#
+          col = c_light_highlight, border = NA)#
+  polygon(c(iter, rev(iter)),#
+          c(mc_stats[1,] - 2 * mc_stats[2,], #
+            rev(mc_stats[1,] + 2 * mc_stats[2,])),#
+          col = c_mid, border = NA)#
+  polygon(c(iter, rev(iter)), #
+          c(mc_stats[1,] - 1 * mc_stats[2,], #
+            rev(mc_stats[1,] + 1 * mc_stats[2,])),#
+          col = c_mid_highlight, border = NA)#
+  lines(iter, mc_stats[1,], col=c_dark, lwd=2)#
+  abline(h=truth, col="grey", lty=2, lw=2)#
+}#
+#
+plot_mc_evo(iter, mc_stats, poisson_prob(A1, l))
+pushforward_samples = sapply(stan_samples, function(x) 1 - indicator(x, A1))#
+compute_mc_stats(pushforward_samples)#
+#
+1 - poisson_prob(A1, l)
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A_union))#
+compute_mc_stats(pushforward_samples)#
+#
+poisson_prob(A_union, l)
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, A_inter))#
+compute_mc_stats(pushforward_samples)#
+#
+poisson_prob(A_inter, l)
+pushforward_samples = sapply(stan_samples, function(x) iota(x))#
+#
+iter <- 2:1000#
+mc_stats <- sapply(iter, function(n) compute_mc_stats(pushforward_samples[0:n]))#
+plot_mc_evo(iter, mc_stats, l)
+pushforward_samples = sapply(stan_samples, function(x) (iota(x) - 5)**2)#
+compute_mc_stats(pushforward_samples)
+pushforward_samples = sapply(stan_samples, function(x) sqrt(x))#
+compute_mc_stats(pushforward_samples)#
+#
+sum(sapply(0:100, function(x) sqrt(iota(x)) * dpois(x, l)))
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+par(mar = c(8, 6, 0, 0.5))#
+plot(p, main="", col=c_dark, border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+hist(pushforward_samples, breaks=bin_edges, #
+          col=c_mid, border=c_mid_highlight, probability=T, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, main="", col="white", border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+hist(pushforward_samples, breaks=bin_edges, #
+     col=c_mid_trans, border=c_mid_highlight_trans, probability=T, add=T)
+?hist
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, main="", col="white", border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass", ylim=c(0, 1),#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, plot=F)#
+ps$counts <- ps$counts * 0.001#
+plot(ps, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, main="", col="white", border=c_dark_highlight,#
+     xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass", ylim=c(0, 1),#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+ps <- hist(pushforward_samples, breaks=bin_edges, plot=F)#
+ps$counts <- ps$counts * 0.001#
+plot(ps, col=c_mid_trans, border=c_mid_highlight_trans, add=T)
+?plot
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border=black, lwd=2, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border="black", lwd=2, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border="white", lwd=2, add=T)#
+plot(p, col="000000", border="black", lwd=1.5, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border="white", lwd=3, add=T)#
+plot(p, col="000000", border="black", lwd=1.5, add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border="white", add=T)#
+par(lwd=2)#
+plot(p, col="000000", border="white", add=T)#
+#
+plot(p, col="000000", border="black", add=T)#
+par(lwd=1.5)#
+plot(p, col="000000", border="black", add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border="white", add=T)#
+par(lwd=3)#
+plot(p, col="000000", border="white", add=T)#
+#
+plot(p, col="000000", border="black", add=T)#
+par(lwd=1.5)#
+plot(p, col="000000", border="black", add=T)
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, #
+           col=c_mid_trans, border=c_mid_highlight_trans, probability=T,#
+           xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+           cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border=c_dark_highlight, add=T)
+?hist
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, freq=T)#
+ps$counts <- ps$counts / 1000#
+plot(ps, col=c_mid_trans, border=c_mid_highlight_trans, #
+     main="", xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+#
+plot(p, col="000000", border=c_dark_highlight, add=T)
+p$counts
+p$density
+ps$counts
+ps$density
+bin_edges <- c(-0.5, sapply(1:21, function(x) sqrt(x - 0.5)))#
+#
+ps <- hist(pushforward_samples, breaks=bin_edges, freq=T)#
+ps$density <- ps$counts / 1000#
+plot(ps, col=c_mid_trans, border=c_mid_highlight_trans, #
+     main="", xlab="y = sqrt(x)", yaxt='n', ylab="Probability Mass",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)#
+p <- hist(0, breaks=bin_edges, plot=FALSE)#
+p$density <- dpois(0:20, l)#
+plot(p, col="000000", border=c_dark_highlight, add=T)
+seq(-8, 8, 0.1)
+r_samples <- rnorm(1000, mu, sigma)#
+#
+# Or we can generate exact samples using Stan's pseudo random number generator#
+writeLines(readLines("generate_gaussian.stan"))#
+#
+simu_data <- list("mu" = mu, "sigma" = sigma)#
+#
+fit <- stan(file='generate_gaussian.stan', data=simu_data, #
+            seed=194838, algorithm="Fixed_param",#
+            iter=1000, warmup=0, chains=1)#
+#
+stan_samples <- extract(fit)$x[]
+writeLines(readLines("generate_normal.stan"))#
+#
+simu_data <- list("mu" = mu, "sigma" = sigma)
+fit <- stan(file='generate_normal.stan', data=simu_data, #
+            seed=194838, algorithm="Fixed_param",#
+            iter=1000, warmup=0, chains=1)#
+#
+stan_samples <- extract(fit)$x[]
+plot_norm(mu, sigma)#
+hist(r_samples, breaks=seq(-8, 8, 0.1), #
+     col=c_dark_trans, border=c_dark_highlight_trans, probability=T, add=T)#
+hist(stan_samples, breaks=seq(-8, 8, 0.1), #
+     col=c_mid_trans, border=c_mid_highlight_trans, probability=T, add=T)
+plot_norm(mu, sigma)#
+hist(r_samples, breaks=seq(-8, 8, 0.5), #
+     col=c_dark_trans, border=c_dark_highlight_trans, probability=T, add=T)#
+hist(stan_samples, breaks=seq(-8, 8, 0.5), #
+     col=c_mid_trans, border=c_mid_highlight_trans, probability=T, add=T)
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, B1_min, B1_max))#
+compute_mc_stats(pushforward_samples)#
+#
+norm_prob(B1_min, B1_max, mu, sigma)
+indicator <- function(x, B_min, B_max) {#
+  return(ifelse(B_min <= x & x <= B_max, 1, 0))#
+}#
+#
+pushforward_samples = sapply(stan_samples, function(x) indicator(x, B1_min, B1_max))#
+compute_mc_stats(pushforward_samples)
+iter <- 2:1000#
+mc_stats <- sapply(iter, function(n) compute_mc_stats(pushforward_samples[0:n]))#
+plot_mc_evo(iter, mc_stats, norm_prob(B1_min, B1_max, mu, sigma))
+pushforward_samples = sapply(stan_samples, function(x) 1 - indicator(x, B1_min, B1_max))#
+compute_mc_stats(pushforward_samples)#
+#
+1 - norm_prob(B1_min, B1_max, mu, sigma)
+pushforward_samples = #
+  sapply(stan_samples, function(x) indicator(x, B_union_min, B_union_max))#
+compute_mc_stats(pushforward_samples)#
+#
+norm_p
+pushforward_samples = #
+  sapply(stan_samples, function(x) indicator(x, B_union_min, B_union_max))#
+compute_mc_stats(pushforward_samples)#
+#
+norm_prob(B_union_min, B_union_max, mu, sigma)#
+#
+# What is th
+pushforward_samples = #
+  sapply(stan_samples, function(x) indicator(x, B_inter_min, B_inter_max))#
+compute_mc_stats(pushforward_samples)#
+#
+norm_prob(B_inter_min, B_inter_max, mu, sigma)
+identity <- function(x) {#
+  return(x)#
+}#
+#
+pushforward_samples = sapply(stan_samples, function(x) identity(x))#
+compute_mc_stats(pushforward_samples)
+iter <- 2:1000#
+mc_stats <- sapply(iter, function(n) compute_mc_stats(pushforward_samples[0:n]))#
+plot_mc_evo(iter, mc_stats, mu)
+pushforward_samples = sapply(stan_samples, function(x) (identity(x) - mu)**2)#
+compute_mc_stats(pushforward_samples)
+sigma
+simu_data
+(1.65952472 - 1.25) / 0.07279322
+sigma**2
+pushforward_samples = sapply(stan_samples, function(x) x**2)#
+compute_mc_stats(pushforward_samples)
+ys <- seq(0, 16, 0.001)#
+pdfs <- sapply(ys, function(y) dnorm(y_inv(y), mu, sigma) * abs_J(y))#
+#
+plot(ys, pdfs, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="y = x^2", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')#
+hist(pushforward_samples, breaks=seq(0, 16, 0.5), probability=T,#
+     col=c_mid_trans, border=c_mid_highlight_trans, add=T)
+min(pushforward_samples)
+max(pushforward_samples)
+ys <- seq(0, 25, 0.001)#
+pdfs <- sapply(ys, function(y) dnorm(y_inv(y), mu, sigma) * abs_J(y))#
+#
+plot(ys, pdfs, type="l", col=c_dark_highlight, lwd=2,#
+     xlab="y = x^2", ylab="Probability Density",#
+     cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, yaxt='n')#
+hist(pushforward_samples, breaks=seq(0, 25, 0.5), probability=T,#
+     col=c_mid_trans, border=c_mid_highlight_trans, add=T)
