@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day1/1 - probability_theory/')
 
 ############################################################
 #
@@ -55,12 +55,12 @@ B2_max <- 3
 # B1c = (-\infty, -2) \cup (1, \infty)
 
 # What are the lower and upper bounds of the union of B1 and B2?
-B_union_min <- ?
-B_union_max <- ?
+B_union_min <- -2
+B_union_max <- 3
 
 # What are the lower and upper bounds of the intersection of B1 and B2?
-B_inter_min <- ?
-B_inter_max <- ?
+B_inter_min <- 0
+B_inter_max <- 1
 
 ############################################################
 #
@@ -92,6 +92,9 @@ plot_poisson(l)
 
 # What is the probabilty of A1 by explicit summation?
 sum(sapply(A1, function(x) dpois(x, l)))
+# > A1
+# [1] 4 5 6 7
+# A1 is a set. in the mass function (defined over discrete space) we can just add the component bars together to find the probability of the set
 
 # We can plot that, too
 plot_poisson_probs <- function(A, l) {
@@ -106,26 +109,38 @@ plot_poisson(l)
 plot_poisson_probs(A1, l)
 
 # What is the probabilty of A1 by subtracting cumulative distribution functions?
+
 poisson_prob <- function(A, l) {
   return(ppois(A[length(A)], l) - ppois(A[1] - 1, l))
 }
-
+# we take the value of the cumulative function of the upper bound and subtract the value at the lower bound. 
+#This then gives the same result as adding the parts of the mass function
 poisson_prob(A1, l)
 
-# What is the probabilty of the complement of A1?
+# The cumulative mass function is just adding each successive point added together
+plot(ppois(1:13, l), type="o")
+
+## What is the probabilty of the complement of A1?
+1-sum(sapply(A1, function(x) dpois(x, l)))
 
 # We can compute this with cumulative distibution functions
-?
+ppois(A1[1]-1, l) + 1-(ppois(A1[length(A1)],l))
 
 # or by using the sum rule for complements, P[A^c] = 1 - P[A],
-?
+
+# this gives me the probability of everything below my set
+below=sum(sapply(0:(min(A1)-1), function(x) dpois(x, l)))
+# this gives me the probability for everything above my set
+above=1-sum(sapply(0:(max(A1)+1), function(x) dpois(x, l)))
+total_complement=below+above
 
 # We can also plot it
 plot_poisson(l)
-plot_poisson_probs(0:(A[1] - 1), l)
-plot_poisson_probs((A[length(A)] + 1):20, l)
+plot_poisson_probs(0:(A1[1] - 1), l)
+plot_poisson_probs((A1[length(A1)] + 1):20, l)
 
 # What is the probabilty of the union of A1 and A2?
+sum(sapply(union(A1,A2), function(x) dpois(x, l)))
 
 # We can compute this using cumulative distribution functions
 poisson_prob(A_union, l)
@@ -139,7 +154,6 @@ plot_poisson(l)
 plot_poisson_probs(A_union, l)
 
 # What is the probability of the intersection of A1 and A2?
-
 # We can compute this using cumulative distribution functions
 poisson_prob(A_inter, l)
 
@@ -166,6 +180,15 @@ iota <- function(x) {
 
 # The mean is then estimated by
 sum(sapply(0:100, function(x) iota(x) * dpois(x, l)))
+#poisson of 1:100
+p=dpois(0:100, l)
+plot(dpois(0:100, l))
+# embedded values
+ev=iota(0:100)
+plot(iota(0:100))
+# summation of the multiplication yields the mean??
+plot(p*ev)
+sum(p*ev)
 
 # We can also look at how the mean estimate convergences as
 # we consider longer and longer intervals
@@ -296,7 +319,7 @@ plot_norm(mu, sigma)
 plot_norm_probs(mu, sigma, B_union_min, B_union_max)
 
 # What is the probability of the intersection of A1 and A2?
-                      
+                     
 # We can compute this using cumulative distribution functions
 ?
 
