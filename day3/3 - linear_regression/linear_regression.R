@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day3/3 - linear_regression/')
 
 ############################################################
 # Initial setup
@@ -6,9 +6,10 @@ setwd('')
 
 library(rstan)
 rstan_options(auto_write = TRUE)
-options(mc.cores = parallel::detectCores())
+options(mc.cores = parallel::detectCores()) # parelleization
 
-util <- new.env()
+#get utility fnct/ diagnistics
+util <- new.env() 
 source('stan_utility.R', local=util)
 
 c_light <- c("#DCBCBC")
@@ -112,12 +113,12 @@ pad_obs <- do.call(cbind, lapply(idx, function(n) obs[n]))
 
 ppc <- sapply(1:4000, function(n) hist(params$y_ppc[n,], breaks=breaks, plot=FALSE)$counts)
 probs = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
-cred <- sapply(1:B, function(b) quantile(counts[b,], probs=probs))
+cred <- sapply(1:B, function(b) quantile(ppc[b,], probs=probs))
 pad_cred <- do.call(cbind, lapply(idx, function(n) cred[1:9, n]))
 
 plot(1, type="n", main="Posterior Predictive Distribution",
      xlim=c(min_y, max_y), xlab="y",
-     ylim=c(0, max(c(obs_counts, cred[9,]))), ylab="")
+     ylim=c(0, max(c(obs, cred[9,]))), ylab="")
 
 polygon(c(xs, rev(xs)), c(pad_cred[1,], rev(pad_cred[9,])),
         col = c_light, border = NA)
@@ -204,12 +205,12 @@ pad_obs <- do.call(cbind, lapply(idx, function(n) obs[n]))
 
 ppc <- sapply(1:4000, function(n) hist(params$y_ppc[n,], breaks=breaks, plot=FALSE)$counts)
 probs = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
-cred <- sapply(1:B, function(b) quantile(counts[b,], probs=probs))
+cred <- sapply(1:B, function(b) quantile(ppc[b,], probs=probs))
 pad_cred <- do.call(cbind, lapply(idx, function(n) cred[1:9, n]))
 
 plot(1, type="n", main="Posterior Predictive Distribution",
      xlim=c(min_y, max_y), xlab="y",
-     ylim=c(0, max(c(obs_counts, cred[9,]))), ylab="")
+     ylim=c(0, max(c(obs, cred[9,]))), ylab="")
 
 polygon(c(xs, rev(xs)), c(pad_cred[1,], rev(pad_cred[9,])),
         col = c_light, border = NA)
@@ -223,3 +224,4 @@ lines(xs, pad_cred[5,], col=c_dark, lwd=2)
 
 lines(xs, pad_obs, col="white", lty=1, lw=2.5)
 lines(xs, pad_obs, col="black", lty=1, lw=2)
+
