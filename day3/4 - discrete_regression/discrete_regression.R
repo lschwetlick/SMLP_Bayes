@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day3/4 - discrete_regression/')
 
 ############################################################
 # Initial setup
@@ -28,7 +28,7 @@ c_dark_highlight_trans <- c("#7C000088")
 ############################################################
 
 input_data <- read_rdump('discrete_regression.data.R')
-fit <- stan(file='poisson.stan', data=input_data, seed=4938483)
+fit <- stan(file='negative_binomial.stan', data=input_data, seed=4938483)
 
 # Check diagnostics
 util$check_all_diagnostics(fit)
@@ -63,6 +63,7 @@ probs = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
 cred <- sapply(1:(B + 1), function(b) quantile(counts[b,], probs=probs))
 pad_cred <- do.call(cbind, lapply(idx, function(n) cred[1:9,n + 1]))
 
+par(mfrow=c(1, 1))
 plot(1, type="n", main="Posterior Predictive Distribution",
      xlim=c(-0.5, B + 0.5), xlab="y",
      ylim=c(0, max(c(obs_counts, cred[9,]))), ylab="")
@@ -79,3 +80,4 @@ lines(x, pad_cred[5,], col=c_dark, lwd=2)
 
 lines(x, pad_obs, col="white", lty=1, lw=2.5)
 lines(x, pad_obs, col="black", lty=1, lw=2)
+
