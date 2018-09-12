@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day2/2 - workflow/')
 
 ############################################################
 #
@@ -114,12 +114,13 @@ N <- 100
 
 simu_data <- list("N" = N)
 
+# we are running the stan code 1000 times (R) times the amount of chains (in this case 1). It generates 1000 lists of 100
 fit <- stan(file='generative_ensemble.stan', data=simu_data,
             iter=R, warmup=0, chains=1, refresh=R,
             seed=4838282, algorithm="Fixed_param")
 
-simu_lambdas <- extract(fit)$lambda
-simu_ys <- extract(fit)$y
+simu_lambdas <- extract(fit)$lambda # 1000 (the lambdas we tried)
+simu_ys <- extract(fit)$y # 1000*100 matrix
 
 # Plot aggregated summary histogram for simulated observations
 B <- 40
@@ -146,6 +147,8 @@ lines(x, pad_cred[5,], col=c_dark, lwd=2)
 
 abline(v=25, col="white", lty=1, lw=2.5)
 abline(v=25, col="black", lty=1, lw=2)
+# the colors are quanitles. Could make a histogram for each of the 1000 processes. This is just a summary. 
+
 
 # We see a very small prior predictive probability above the
 # extreme observation scale from our domain expertise
@@ -215,6 +218,7 @@ if (sum(warning_code) != 0) {
 }
 
 # Check SBC histogram
+# should be flat if consistent/good fit
 sbc_rank <- ensemble_output[2,]
 sbc_hist <- hist(sbc_rank, seq(0, 500, 25) - 0.5, col=c_dark, border=c_dark_highlight)
 plot(sbc_hist, main="", xlab="Prior Rank", yaxt='n', ylab="")
@@ -236,6 +240,8 @@ shrinkage <- ensemble_output[4,]
 
 plot(shrinkage, z_score, col=c("#8F272720"), lwd=2, pch=16, cex=0.8,
      xlim=c(0, 1), xlab="Posterior Shrinkage", ylim=c(-5, 5), ylab="Posterior z-Score")
+
+# see lot of shirnkage, z centered around 0
 
 ############################################################
 # POSTERIOR TO OBSERVATION
