@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day3/5 - logistic_regression')
 
 ############################################################
 # Initial setup
@@ -217,3 +217,4 @@ hist(params$p_hat_right_ppc, breaks=breaks,
      main="", xlab="p_hat_right_ppc")
 abline(v=sum(input_data$y * (input_data$h == 2)) / sum(input_data$h == 2),
        col=c_light, lty=1, lw=2)
+
