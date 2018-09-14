@@ -1,4 +1,4 @@
-setwd('')
+setwd('/Users/lisa/Documents/SMLP/material/day4/7 - hierarchical_regression/')
 
 ############################################################
 # Initial setup
@@ -51,7 +51,7 @@ idx <- rep(1:N, each=2)
 x <- sapply(1:length(idx), function(m) if(m %% 2 == 0) idx[m] + 0.5 else idx[m] - 0.5)
 
 probs = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
-cred <- sapply(1:data$N, function(n) quantile(params$theta[,n], probs=probs))
+cred <- sapply(1:data$N, function(n) quantile(cp_params$theta[,n], probs=probs))
 cred <- cbind(cred, quantile(cp_params$mu, probs=probs))
 pad_cred <- do.call(cbind, lapply(idx, function(n) cred[1:9,n]))
 
@@ -262,3 +262,4 @@ plot(ncp_params$theta[,1], log(ncp_params$tau),
      xlab="theta[1]", ylab="log(tau)")
 points(cp_params$theta[,1], log(cp_params$tau),
        col=c_light_trans, pch=16, cex=0.8)
+
